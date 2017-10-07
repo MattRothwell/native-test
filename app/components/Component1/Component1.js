@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   description: {
-    fontSize: 18,
+    fontSize: 24,
     textAlign: 'center',
     color: '#656565',
     marginTop: 65,
