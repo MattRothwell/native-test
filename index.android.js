@@ -1,22 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+	AppRegistry,
 } from 'react-native';
 import { Provider } from 'react-redux';
+//var configureStore = require('./app/configureStore');
 import configureStore from './app/configureStore'
 import App from './app/app'
 
 const store = configureStore()
-const rmredux = () => (
-    <Provider store={store}>
-        <App />
-    </Provider>
-)
-AppRegistry.registerComponent('rmredux', () => rmredux);
 
+const reactnative = () => (
+	<Provider store={store}>
+		<App />
+	</Provider>
+)
+
+AppRegistry.registerComponent('reactnative', () => reactnative);
 
 /* OLD COMPONENT WORK */
 //Components

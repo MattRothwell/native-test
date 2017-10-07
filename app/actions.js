@@ -1,16 +1,16 @@
-import { FETCHING_PEOPLE, FETCHING_PEOPLE_SUCCESS, FETCHING_PEOPLE_FAILURE } from './app/constants'
+import { FETCHING_PEOPLE, FETCHING_PEOPLE_SUCCESS, FETCHING_PEOPLE_FAILURE } from './constants'
 
-export function fetchPeopleFromAPI(){
-	return (dispatch) {
+export function fetchPeopleFromAPI() {
+	return (dispatch) => {
 		dispatch(getPeople())
 		fetch('https://swapi.co/api/people/')
 			.then(res => res.json())
 			.then(json => dispatch(getPeopleSuccess(json.results)))
 			.catch(err => dispatch(getpeoplefailure(err)))
-		}
-}
+	}
+};
 
-function getPeople() {
+function getPeople(){
 	return {
 		type: FETCHING_PEOPLE
 	}
@@ -21,8 +21,7 @@ function getPeopleSuccess(data){
 		data
 	}
 }
-
-function getpeoplefailure(err){
+function getpeoplefailure(){
 	return {
 		type: FETCHING_PEOPLE_FAILURE
 	}
